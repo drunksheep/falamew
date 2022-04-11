@@ -1,0 +1,42 @@
+.variant {
+	border: 0;
+	background-color: transparent;
+	padding: 0;
+}
+
+.btn-default {
+	padding: 15px 40px;
+	transition: all 0.35s ease;
+
+	&.slimmer {
+		padding: 12px 45px;
+	}
+
+	&.bigger {
+		padding: 20px 40px;
+	}
+}
+
+.submit-form {
+	@extend .transitioned-basic;
+	width: 180px; 
+	min-height: 38px;
+	border: 2px solid transparent;
+
+	&:hover {
+		background: #FFF; 
+		border-color: $blue;	
+	} 	
+}
+
+.btn-cta-digital {
+	@extend .transitioned-basic; 
+	min-height: 46px;
+	width: 	225px;
+	border: 2px solid transparent;
+
+	&:hover {
+		background-color: #FFF;
+		border-color: $blue;
+	}	
+}

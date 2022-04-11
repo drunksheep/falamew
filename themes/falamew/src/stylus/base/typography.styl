@@ -1,0 +1,120 @@
+webfont('Barlow', 'Barlow-Medium', 400);
+webfont('Barlow', 'Barlow-ExtraBold', 800);
+
+// ## families ##
+// ##############
+.t-bar {
+	font-family: $font;
+}
+
+// ## t-colors ##
+// ##############
+.t-white {
+	color: #FFF;
+}
+
+.t-purple {
+	color: $purple; 	
+}
+
+.t-blue {
+	color: $blue;	
+}
+
+.t-red {
+	color: $red;	
+}
+
+.t-yellow {
+	color: $yellow;	
+}
+
+// ## text ##
+// ##########
+$fontSizes = 10px, 12px, 14px, 16px, 18px, 20px, 22px, 24px, 26px, 28px, 30px, 32px, 34px, 36px, 38px, 40px, 42px, 44px, 46px, 48px, 50px, 52px, 54px, 55px, 58px, 60px, 68px, 70px, 80px, 90px;
+
+for $fontSize, i in $fontSizes {
+	.t-{$fontSize} {
+		@media $tablet-max {
+			font-size: ($fontSize - 2px);
+		}
+
+		@media $small-desktop-min {
+			font-size: $fontSize;
+		}
+	}
+}
+
+// ## lineheight ##
+// ################
+$lineHeights = 12px, 14px, 16px, 18px, 20px, 22px, 24px, 26px, 28px, 30px, 32px, 34px, 36px, 38px, 40px, 42px, 60px, 64px, 68px;
+
+for $lineHeight, i in $lineHeights {
+	.t-lh-{$lineHeight} {
+		@media $tablet-max {
+			line-height: ($lineHeight - 2px);
+		}
+
+		@media $small-desktop-min {
+			line-height: $lineHeight;
+		}
+	}
+}
+
+// ## rules ##
+// ###########
+.t-centered {
+	text-align: center;
+}
+
+.t-upper {
+	text-transform: uppercase;
+}
+
+.t-right {
+	text-align: right;
+}
+
+// ## weights ##
+// #############
+.t-lig {
+	font-weight: 300;
+}
+
+.t-reg {
+	font-weight: 400;
+}
+
+.t-med {
+	font-weight: 500;
+}
+
+.t-sb {
+	font-weight: 600;
+}
+
+.t-bold {
+	font-weight: 700;
+}
+
+.t-w-black {
+	font-weight: 800;
+}
+
+.t-black-extra {
+	font-weight: 900;
+}
+
+// ## etc ##
+// #########
+a.t-und {
+	text-decoration: underline !important;
+}
+
+.t-und {
+	@extend a.t-und;
+}
+
+.t-ita {
+	font-style: italic;
+}

@@ -1,0 +1,266 @@
+.w-100 {
+	width: 100%;
+}
+
+.full {
+	@extend .w-100;
+	display: block;
+}
+
+.half {
+	@media print {
+		float: left;
+		width: 47.5%;
+	}
+
+	@media $small-desktop-min {
+		width: 47.5%;
+	}
+
+	& + .half {
+		@media $tablet-max {
+			margin-top: 20px;
+		}
+
+		&:not(:nth-child(2n+3)) {
+			@media print {
+				margin-left: 5%;
+			}
+		}
+	}
+}
+
+.half-generic {
+	@extend .half;
+
+	& + .half-generic {
+		@media $tablet-max {
+			margin-top: 20px;
+		}
+
+		&:not(:nth-child(2n+3)) {
+			@media $small-desktop-min {
+				margin-left: 5%;
+			}
+		}
+
+		&:nth-of-type(n+3) {
+			@media $small-desktop-min {
+				margin-top: 30px;
+			}
+		}
+	}
+}
+
+.half-child {
+	@extend .half;
+
+	& + .half-child:not(:nth-child(2n+3)) {
+		margin-left: 5%;
+	}
+
+	&.block-50 {
+		&:nth-of-type(n+3) {
+			@media $small-desktop-min {
+				margin-top: 30px;
+			}
+		}
+	}
+}
+
+.one-third {
+	@media print {
+		float: left;
+	}
+
+	@media $small-desktop-min {
+		width: 31.66%;
+	}
+}
+
+.one-third-child {
+	@extend .one-third;
+
+	& + .one-third-child:not(:nth-of-type(3n+4)) {
+		margin-left: 2.5%;
+	}
+}
+
+.one-fourth {
+	@media print {
+		float: left;
+		width: 23.75%;
+	}
+
+	@media $small-desktop-min {
+		width: 23.75%;
+	}
+}
+
+.one-fourth-child {
+	@extend .one-fourth;
+
+	& + .one-fourth-child {
+		@media $tablet-max {
+			margin-top: 30px;
+		}
+
+		&:not(:nth-of-type(4n+5)) {
+			@media $small-desktop-min {
+				margin-left: 1.666%;
+			}
+		}
+	}
+}
+
+.one-fifth {
+	@media print {
+		float: left;
+	}
+
+	@media $small-desktop-min {
+		width: 18%;
+	}
+}
+
+.one-fifth-child {
+	@extend .one-fifth;
+
+	& + .one-fifth-child:not(:nth-of-type(5n+6)) {
+		@media $small-desktop-min {
+			margin-left: 2.5%;
+		}
+	}
+}
+
+.two-thirds {
+	@media print {
+		float: left;
+		width: 63.334%;
+	}
+
+	@media $small-desktop-min {
+		width: 63.334%;
+	}
+}
+
+.ninety {
+	@media print {
+		float: left;
+	}
+
+	@media $small-desktop-min {
+		width: 90%;
+	}
+}
+
+.sixty-five {
+	@media print {
+		float: left;
+	}
+
+	@media $small-desktop-min {
+		width: 65%;
+	}
+}
+
+// iterado
+$spacings = 10px, 20px, 30px, 40px, 50px, 60px, 70px, 80px, 90px, 100px;
+
+for $spacing, i in $spacings {
+	.pdt-{i + 1} {
+		&:not(.keep-pdt) {
+			@media $tablet-max {
+				padding-top: ($spacing / 2);
+			}
+		}
+
+		&.keep-pdt {
+			padding-top: $spacing;
+		}
+
+		@media $small-desktop-min {
+			padding-top: $spacing;
+		}
+	}
+
+	.pdl-{i + 1} {
+		&:not(.keep-pdl) {
+			@media $tablet-max {
+				padding-left: ($spacing / 2);
+			}
+		}
+
+		&.keep-pdl {
+			padding-left: $spacing;
+		}
+
+		@media $small-desktop-min {
+			padding-left: $spacing;
+		}
+	}
+
+	.pdr-{i + 1} {
+		&:not(.keep-pdr) {
+			@media $tablet-max {
+				padding-right: ($spacing / 2);
+			}
+		}
+
+		&.keep-pdr {
+			padding-right: $spacing;
+		}
+
+		@media $small-desktop-min {
+			padding-right: $spacing;
+		}
+	}
+
+	.pdb-{i + 1} {
+		&:not(.keep-pdb) {
+			@media $tablet-max {
+				padding-bottom: ($spacing / 2);
+			}
+		}
+
+		&.keep-pdb {
+			padding-bottom: $spacing;
+		}
+
+		@media $small-desktop-min {
+			padding-bottom: $spacing;
+		}
+	}
+
+	.mt-{i + 1} {
+		&:not(.keep-mt) {
+			@media $tablet-max {
+				margin-top: ($spacing / 2);
+			}
+		}
+
+		&.keep-mt {
+			margin-top: $spacing;
+		}
+
+		@media $small-desktop-min {
+			margin-top: $spacing;
+		}
+	}
+
+	.mb-{i + 1} {
+		&:not(.keep-mb) {
+			@media $tablet-max {
+				margin-bottom: ($spacing / 2);
+			}
+		}
+
+		&.keep-mb {
+			margin-bottom: $spacing;
+		}
+
+		@media $small-desktop-min {
+			margin-bottom: $spacing;
+		}
+	}
+}

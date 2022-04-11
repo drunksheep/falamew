@@ -1,0 +1,32 @@
+{
+  "name": "falamew",
+  "version": "0.0.1",
+  "description": "Freela pra Luana",
+  "author": "André Facchini",
+  "person": {
+    "name": "André Facchini",
+    "email": "andre3facchini@gmail.com",
+    "url": "https://twitter.com/@dokkodojs"
+  },
+  "repository": "github:drunksheep/personal-boilerplate",
+  "license": "MIT",
+  "homepage": "https://github.com/drunksheep/personal-boilerplate/",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "autoprefixer": "^9.8.8",
+    "cssnano": "^5.0.14",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-stylus": "^2.7.1",
+    "gulp-terser": "^1.4.1",
+    "is-obj": "^2.0.0",
+    "postcss": "^8.4.5"
+  }
+}
